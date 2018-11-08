@@ -17,21 +17,110 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOI-5k-YFN">
-                                <rect key="frame" x="164.66666666666666" y="396" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07J-vL-cXw">
+                                <rect key="frame" x="0.0" y="695" width="375" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Pantry" id="qa4-bP-Ytn"/>
+                                    <tabBarItem title="Browse" id="STs-tW-XLM"/>
+                                    <tabBarItem title="Save" id="DlY-sB-Ka6"/>
+                                </items>
+                            </tabBar>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NF5-AR-2h8">
+                                <rect key="frame" x="0.0" y="104" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ce9-qh-M3g">
+                                <rect key="frame" x="16" y="207" width="343" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="wtJ-0Z-5T7"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HqM-OF-cwM">
+                                    <size key="itemSize" width="140" height="127"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="quickBitesCell" id="oiA-2l-5CW" customClass="QuickBitesCollectionViewCell" customModule="Pocket_Chef" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.66666666666666663" width="140" height="127"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="127"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kisspng-juice-health-food-breakfast-vegetable-transparent-background-5a755db9e4c404.335646851517641145937" translatesAutoresizingMaskIntoConstraints="NO" id="JKX-vM-yEN">
+                                                    <rect key="frame" x="19" y="0.0" width="101" height="95"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nok-Wr-0U0">
+                                                    <rect key="frame" x="35" y="99" width="71" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="140" height="127"/>
+                                        <connections>
+                                            <outlet property="quickBiteImg" destination="JKX-vM-yEN" id="acp-Az-fc4"/>
+                                            <outlet property="quickBiteLbl" destination="nok-Wr-0U0" id="JMh-tA-sHu"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gAz-Lv-Oys"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xxr-So-Imd"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Bites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeT-Kl-Dzd">
+                                <rect key="frame" x="16" y="171" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healthy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnv-9x-Ngy">
+                                <rect key="frame" x="16" y="343" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DOI-5k-YFN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="SCA-b4-tE2"/>
-                            <constraint firstItem="DOI-5k-YFN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ukD-wz-gPB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gnv-9x-Ngy" secondAttribute="trailing" constant="300" id="0bZ-eE-KlS"/>
+                            <constraint firstItem="Ce9-qh-M3g" firstAttribute="top" secondItem="WeT-Kl-Dzd" secondAttribute="bottom" constant="15" id="1sB-lU-AkW"/>
+                            <constraint firstItem="Gnv-9x-Ngy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1wX-iX-SMf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WeT-Kl-Dzd" secondAttribute="trailing" constant="272" id="DSP-lR-Dyk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="07J-vL-cXw" secondAttribute="trailing" id="H5X-RN-VUW"/>
+                            <constraint firstItem="WeT-Kl-Dzd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HAg-R4-Kce"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ce9-qh-M3g" secondAttribute="trailing" constant="16" id="Mx3-SX-cTQ"/>
+                            <constraint firstItem="07J-vL-cXw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Nvu-JV-7Dv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gnv-9x-Ngy" secondAttribute="bottom" constant="414" id="XRi-hM-0rk"/>
+                            <constraint firstItem="NF5-AR-2h8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="Zgp-2w-bDs"/>
+                            <constraint firstItem="07J-vL-cXw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aVm-qN-eiU"/>
+                            <constraint firstItem="Gnv-9x-Ngy" firstAttribute="top" secondItem="Ce9-qh-M3g" secondAttribute="bottom" constant="8" id="bwW-hn-q8X"/>
+                            <constraint firstItem="NF5-AR-2h8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hX3-Pp-0Hw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="07J-vL-cXw" secondAttribute="bottom" id="ho6-WC-oc3"/>
+                            <constraint firstItem="WeT-Kl-Dzd" firstAttribute="top" secondItem="NF5-AR-2h8" secondAttribute="bottom" constant="11" id="juQ-ZU-5px"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NF5-AR-2h8" secondAttribute="trailing" id="lCC-lc-Djn"/>
+                            <constraint firstItem="Ce9-qh-M3g" firstAttribute="leading" secondItem="Gnv-9x-Ngy" secondAttribute="leading" id="pur-R3-5Mt"/>
+                            <constraint firstItem="Ce9-qh-M3g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zPJ-PN-j6L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="quickBitesCollectionView" destination="Ce9-qh-M3g" id="Gp3-qR-666"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="22.906403940886701"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kisspng-juice-health-food-breakfast-vegetable-transparent-background-5a755db9e4c404.335646851517641145937" width="900" height="480"/>
+    </resources>
 </document>

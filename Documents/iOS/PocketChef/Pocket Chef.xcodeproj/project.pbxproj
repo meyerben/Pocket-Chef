@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76E7E4372194C6630096AD4B /* QuickBitesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E7E4362194C6630096AD4B /* QuickBitesCollectionViewCell.swift */; };
 		7BE43AC4218B77F50072738F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE43AC3218B77F50072738F /* AppDelegate.swift */; };
 		7BE43AC9218B77F50072738F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE43AC7218B77F50072738F /* Main.storyboard */; };
 		7BE43ACB218B77F60072738F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE43ACA218B77F60072738F /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76E7E4362194C6630096AD4B /* QuickBitesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBitesCollectionViewCell.swift; sourceTree = "<group>"; };
 		7BE43AC0218B77F50072738F /* Pocket Chef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Chef.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE43AC3218B77F50072738F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BE43AC8218B77F50072738F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				7BE43ACC218B77F60072738F /* LaunchScreen.storyboard */,
 				7BE43ACF218B77F60072738F /* Info.plist */,
 				7BE43AD5218B79E80072738F /* HomeViewController.swift */,
+				76E7E4362194C6630096AD4B /* QuickBitesCollectionViewCell.swift */,
 			);
 			path = "Pocket Chef";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			files = (
 				7BE43AC4218B77F50072738F /* AppDelegate.swift in Sources */,
 				7BE43AD6218B79E80072738F /* HomeViewController.swift in Sources */,
+				76E7E4372194C6630096AD4B /* QuickBitesCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
