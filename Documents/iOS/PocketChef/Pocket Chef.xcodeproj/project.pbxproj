@@ -11,6 +11,8 @@
 		763D177D219B6E1000B51D3C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763D177C219B6E1000B51D3C /* HomeViewController.swift */; };
 		763D1780219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763D177F219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift */; };
 		763D1782219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763D1781219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift */; };
+		76C0257D219DE033009CEBA0 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0257C219DE033009CEBA0 /* PantryViewController.swift */; };
+		76C0257F219DE0C6009CEBA0 /* PantryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */; };
 		7BE43AC4218B77F50072738F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE43AC3218B77F50072738F /* AppDelegate.swift */; };
 		7BE43AC9218B77F50072738F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE43AC7218B77F50072738F /* Main.storyboard */; };
 		7BE43ACB218B77F60072738F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE43ACA218B77F60072738F /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 		763D177C219B6E1000B51D3C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		763D177F219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBitesSeeAllViewController.swift; sourceTree = "<group>"; };
 		763D1781219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBitesSeeAllTableViewCell.swift; sourceTree = "<group>"; };
+		76C0257C219DE033009CEBA0 /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
+		76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItemTableViewCell.swift; sourceTree = "<group>"; };
 		7BE43AC0218B77F50072738F /* Pocket Chef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Chef.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE43AC3218B77F50072738F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BE43AC8218B77F50072738F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 			children = (
 				763D177A219B6DCF00B51D3C /* QuickBitesCollectionViewCell.swift */,
 				763D1781219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift */,
+				76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -55,6 +60,7 @@
 			children = (
 				763D177C219B6E1000B51D3C /* HomeViewController.swift */,
 				763D177F219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift */,
+				76C0257C219DE033009CEBA0 /* PantryViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -160,11 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C0257D219DE033009CEBA0 /* PantryViewController.swift in Sources */,
 				763D1780219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift in Sources */,
 				763D177B219B6DCF00B51D3C /* QuickBitesCollectionViewCell.swift in Sources */,
 				7BE43AC4218B77F50072738F /* AppDelegate.swift in Sources */,
 				763D177D219B6E1000B51D3C /* HomeViewController.swift in Sources */,
 				763D1782219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift in Sources */,
+				76C0257F219DE0C6009CEBA0 /* PantryItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

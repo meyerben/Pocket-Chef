@@ -25,30 +25,74 @@
             </objects>
             <point key="canvasLocation" x="-3124" y="-62"/>
         </scene>
-        <!--Item 2-->
+        <!--Pantry-->
         <scene sceneID="JaU-Te-wtt">
             <objects>
-                <viewController id="xqt-od-feq" sceneMemberID="viewController">
+                <viewController id="xqt-od-feq" customClass="PantryViewController" customModule="Pocket_Chef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FGU-hZ-QsY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second Tab" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpo-XT-kzp">
-                                <rect key="frame" x="166" y="370" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H3P-Ff-Fuh">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pantryItemCell" rowHeight="50" id="AWh-Eb-KVN" customClass="PantryItemTableViewCell" customModule="Pocket_Chef" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AWh-Eb-KVN" id="jql-Ol-kGo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgt-e3-u5H">
+                                                    <rect key="frame" x="15" y="14.666666666666666" width="350" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="hgt-e3-u5H" secondAttribute="trailing" constant="10" id="0h1-1B-2z7"/>
+                                                <constraint firstItem="hgt-e3-u5H" firstAttribute="centerY" secondItem="jql-Ol-kGo" secondAttribute="centerY" id="3Xy-Er-CyK"/>
+                                                <constraint firstItem="hgt-e3-u5H" firstAttribute="top" secondItem="jql-Ol-kGo" secondAttribute="top" constant="14.666666666666666" id="8wM-fV-gs7"/>
+                                                <constraint firstAttribute="bottom" secondItem="hgt-e3-u5H" secondAttribute="bottom" constant="14.666666666666664" id="ai4-5r-PkF"/>
+                                                <constraint firstItem="hgt-e3-u5H" firstAttribute="leading" secondItem="jql-Ol-kGo" secondAttribute="leading" constant="15" id="iuE-iR-0ob"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pantryItemLbl" destination="hgt-e3-u5H" id="jYU-4o-uD9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xqt-od-feq" id="A8j-To-7r0"/>
+                                    <outlet property="delegate" destination="xqt-od-feq" id="hy7-0w-aXJ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zzu-Qh-Ksm" firstAttribute="trailing" secondItem="H3P-Ff-Fuh" secondAttribute="trailing" id="Dwg-ZX-V8A"/>
+                            <constraint firstItem="H3P-Ff-Fuh" firstAttribute="leading" secondItem="Zzu-Qh-Ksm" secondAttribute="leading" id="QRL-um-LA8"/>
+                            <constraint firstItem="Zzu-Qh-Ksm" firstAttribute="bottom" secondItem="H3P-Ff-Fuh" secondAttribute="bottom" id="alF-GO-tMx"/>
+                            <constraint firstItem="H3P-Ff-Fuh" firstAttribute="top" secondItem="Zzu-Qh-Ksm" secondAttribute="top" id="yMi-A2-uoe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zzu-Qh-Ksm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="eGs-Vu-Lvd"/>
+                    <navigationItem key="navigationItem" title="Pantry" id="7tW-P0-Ttv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="801-9t-Ec6">
+                            <connections>
+                                <action selector="addPantryItemBtn:" destination="xqt-od-feq" id="ruq-CL-r6v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pantryTblView" destination="H3P-Ff-Fuh" id="p1M-JR-IlF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYx-2Q-FNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1365" y="209"/>
+            <point key="canvasLocation" x="-423.19999999999999" y="208.37438423645321"/>
         </scene>
         <!--Item-->
         <scene sceneID="GEd-KY-EHn">
@@ -296,13 +340,32 @@
                     </tabBar>
                     <connections>
                         <segue destination="pTD-nV-2B1" kind="relationship" relationship="viewControllers" id="3tL-by-rcz"/>
-                        <segue destination="xqt-od-feq" kind="relationship" relationship="viewControllers" id="irQ-Kg-aaF"/>
+                        <segue destination="nO0-Th-ugu" kind="relationship" relationship="viewControllers" id="irQ-Kg-aaF"/>
                         <segue destination="fLr-6J-7dH" kind="relationship" relationship="viewControllers" id="CYi-Yt-OgU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tub-ok-R8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2318" y="-62"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="tof-qM-ptd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nO0-Th-ugu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 2" id="eGs-Vu-Lvd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xa1-iv-ZlC">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xqt-od-feq" kind="relationship" relationship="rootViewController" id="a4G-XT-UuL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAV-u3-Iq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1365.5999999999999" y="208.37438423645321"/>
         </scene>
     </scenes>
     <resources>
