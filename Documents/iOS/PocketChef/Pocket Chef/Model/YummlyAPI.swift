@@ -27,7 +27,7 @@ class YummlyAPI {
             return
         }
         
-        let urlString = baseUrlString + apiKey + "&" + escapedSearchText
+        let urlString = baseUrlString + apiKey + "&q=" + escapedSearchText
         
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
@@ -42,9 +42,60 @@ class YummlyAPI {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         
+        let task = session.dataTask(with: urlRequest){
+            (data, response, error) in
+            
+            guard error == nil, let data = data else {
+                var errorString = "data not available from search"
+                if let error = error {
+                    errorString = error.localizedDescription
+                }
+                dispatchQueueForHandler.async(execute: {
+                    completionHandler(userInfo, nil, errorString)
+                })
+                return
+            }
+            
+            let (recipes, errorString) = parse(with: data)
+            if let errorString = errorString{
+                dispatchQueueForHandler.async(execute: {
+                    completionHandler(userInfo, nil, errorString)
+                })
+            } else {
+                dispatchQueueForHandler.async(execute: {
+                    completionHandler(userInfo, recipes, nil)
+                    })
+            }
+        }
+        task.resume()
+    }
+    
+    
+    class func parse(with data: Data) -> ([Recipe]?, String?){
+        
+        if let jsonString = String(data: data, encoding: String.Encoding.utf8){
+            print(jsonString)
+        }
+        
+        guard let json = try? JSONSerialization.jsonObject(with: data, options: []),
+            let rootNode = json as? [String:Any] else {
+                return (nil, "unable to parse response from yummly server")
+        }
+        
+        guard let status = rootNode["status"] as? String, status == "OK" else {
+            return (nil, "Server did not return OK")
+        }
+        
+        var recipes = [Recipe]()
+        
+        if let results = rootNode["results"] as? [[String: Any]]{
+            for result in results {
+                if let
+            }
+            
+        }
         
         
     }
-    
     
 }
