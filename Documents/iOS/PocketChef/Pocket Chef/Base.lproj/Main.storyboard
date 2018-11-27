@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="-423.19999999999999" y="208.37438423645321"/>
         </scene>
-        <!--Item-->
+        <!--Saved-->
         <scene sceneID="GEd-KY-EHn">
             <objects>
                 <viewController id="fLr-6J-7dH" sceneMemberID="viewController">
@@ -97,7 +97,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Uag-UQ-dUk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="pMx-2u-GFh"/>
+                    <tabBarItem key="tabBarItem" title="Saved" id="pMx-2u-GFh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7R-On-DLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,11 +332,11 @@
             </objects>
             <point key="canvasLocation" x="-2318" y="-62"/>
         </scene>
-        <!--Item 2-->
+        <!--Pantry-->
         <scene sceneID="tof-qM-ptd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nO0-Th-ugu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="eGs-Vu-Lvd"/>
+                    <tabBarItem key="tabBarItem" title="Pantry" image="Pantry Icon" id="eGs-Vu-Lvd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xa1-iv-ZlC">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -351,11 +351,11 @@
             </objects>
             <point key="canvasLocation" x="-1365.5999999999999" y="208.37438423645321"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="qHe-Nm-LMa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XSG-xl-Imj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="QK2-kF-ckD"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Recipes Icon" id="QK2-kF-ckD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nXf-Az-RZx">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -372,6 +372,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Pantry Icon" width="26" height="28"/>
+        <image name="Recipes Icon" width="25" height="30"/>
         <image name="kisspng-juice-health-food-breakfast-vegetable-transparent-background-5a755db9e4c404.335646851517641145937" width="900" height="480"/>
     </resources>
 </document>
