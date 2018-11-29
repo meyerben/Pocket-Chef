@@ -37,7 +37,7 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
         
         searchController.searchBar.text = initialSearchText
         // Do any additional setup after loading the view.
-        
+        self.quickBitesSeeAllTblView.reloadData()
         
     }
     
