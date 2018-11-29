@@ -25,6 +25,9 @@ struct Recipe {
     var recipeName: String
     var cookTime: String
     var ingredients: String
+    var attribution: String
+    var source: String
+    var id: String
 //    var displayTitle: String
 //    var mpaaRating: String
 //    var criticsPick: Int
@@ -34,8 +37,8 @@ struct Recipe {
 //    var publicationDate: Date
 //    var openingDate: Date
 //    var dateUpdated: Date
-    var link: Link
-    var media: Media
+//    var link: Link
+//    var media: Media
 }
 
 

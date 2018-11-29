@@ -12,6 +12,7 @@
 		763D1780219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763D177F219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift */; };
 		763D1782219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763D1781219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift */; };
 		767E8097219E13D000526B1D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E8096219E13D000526B1D /* Recipe.swift */; };
+		76948B9C21B05322005BD497 /* RecipeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76948B9A21B05322005BD497 /* RecipeModel.xcdatamodeld */; };
 		76C0257D219DE033009CEBA0 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0257C219DE033009CEBA0 /* PantryViewController.swift */; };
 		76C0257F219DE0C6009CEBA0 /* PantryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */; };
 		76F8BE52219E000500952B7C /* YummlyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8BE51219E000500952B7C /* YummlyAPI.swift */; };
@@ -27,6 +28,7 @@
 		763D177F219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBitesSeeAllViewController.swift; sourceTree = "<group>"; };
 		763D1781219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBitesSeeAllTableViewCell.swift; sourceTree = "<group>"; };
 		767E8096219E13D000526B1D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		76948B9B21B05322005BD497 /* RecipeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeModel.xcdatamodel; sourceTree = "<group>"; };
 		76C0257C219DE033009CEBA0 /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
 		76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItemTableViewCell.swift; sourceTree = "<group>"; };
 		76F8BE51219E000500952B7C /* YummlyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummlyAPI.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				7BE43ACA218B77F60072738F /* Assets.xcassets */,
 				7BE43ACC218B77F60072738F /* LaunchScreen.storyboard */,
 				7BE43ACF218B77F60072738F /* Info.plist */,
+				76948B9A21B05322005BD497 /* RecipeModel.xcdatamodeld */,
 			);
 			path = "Pocket Chef";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				767E8097219E13D000526B1D /* Recipe.swift in Sources */,
 				763D1782219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift in Sources */,
 				76C0257F219DE0C6009CEBA0 /* PantryItemTableViewCell.swift in Sources */,
+				76948B9C21B05322005BD497 /* RecipeModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +392,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		76948B9A21B05322005BD497 /* RecipeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				76948B9B21B05322005BD497 /* RecipeModel.xcdatamodel */,
+			);
+			currentVersion = 76948B9B21B05322005BD497 /* RecipeModel.xcdatamodel */;
+			path = RecipeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7BE43AB8218B77F50072738F /* Project object */;
 }
