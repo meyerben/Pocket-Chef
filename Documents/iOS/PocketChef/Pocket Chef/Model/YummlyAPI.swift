@@ -89,8 +89,11 @@ class YummlyAPI {
                     if let id = matches["id"] as? String,
                             //let ingredients = result["ingredients"] as? String,
                             let cookTime = matches["totalTimeInSeconds"] as? Int,
-                                let recipeTitle = matches["recipeName"] as? String{
-                                let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTime, id: id)
+                                let recipeTitle = matches["recipeName"] as? String,
+                                let imageUrlBySizeNode = matches["imageUrlsBySize"] as? [String:String],
+                                let recipeImg = imageUrlBySizeNode["90"] {
+                                 let media = Media(srcUrlString: recipeImg)
+                        let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTime, id: id, media: media)
                                 recipes.append(recipe)
                                 //print(id)
                                 //print(ingredients)

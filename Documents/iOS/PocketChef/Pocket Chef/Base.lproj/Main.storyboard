@@ -232,7 +232,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="149.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kisspng-juice-health-food-breakfast-vegetable-transparent-background-5a755db9e4c404.335646851517641145937" translatesAutoresizingMaskIntoConstraints="NO" id="tVk-Mt-a5K">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tVk-Mt-a5K">
                                                     <rect key="frame" x="15" y="10" width="128" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="gst-xZ-GP7"/>
