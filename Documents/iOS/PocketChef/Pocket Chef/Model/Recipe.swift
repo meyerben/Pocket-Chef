@@ -15,19 +15,16 @@ struct Link {
 }
 
 struct Media {
-    var type: String
     var srcUrlString: String
-    var width: Int
-    var height: Int
 }
 
 struct Recipe {
-    var recipeName: String
-    var cookTime: String
-    var ingredients: String
-    var attribution: String
-    var source: String
-    var id: String
+    var recipeName: Any
+    var cookTime: Int
+    //var ingredients: Any
+    //var attribution: String
+    //var source: String
+    var id: Any
 //    var displayTitle: String
 //    var mpaaRating: String
 //    var criticsPick: Int
@@ -38,7 +35,7 @@ struct Recipe {
 //    var openingDate: Date
 //    var dateUpdated: Date
 //    var link: Link
-//    var media: Media
+    var media: Media
 }
 
 

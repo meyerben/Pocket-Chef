@@ -19,12 +19,11 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
     var recipes: [Recipe]?
     
     
-    var quickBitesAllArray = ["Food1","Food2","Food3","Food4","Food5","Food6","Food7","Food8","Food9","Food10",]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        quickBitesSeeAllTblView.tableFooterView = UIView()
+        
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -64,11 +63,17 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let quickBitesSeeAllCell = tableView.dequeueReusableCell(withIdentifier: "quickBitesSeeAllCell", for: indexPath) as! QuickBitesSeeAllTableViewCell
+
+        if let imageUrl = URL(string: recipes?[indexPath.row].media.srcUrlString ?? "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiLypSZ2oLfAhWno4MKHTubAqgQjRx6BAgBEAU&url=https%3A%2F%2Fwww.digitalcitizen.life%2Fset-windows-live-photo-gallery-2011-default-image-viewer&psig=AOvVaw24LBSQ6wWK475KxaeY3eyI&ust=1543893636425251"),
+            let imageData = try? Data(contentsOf: imageUrl) {
+            quickBitesSeeAllCell.mealImg.image = UIImage(data: imageData)
+        }
         
+        quickBitesSeeAllCell.mealName.text = recipes?[indexPath.row].recipeName as? String
+        quickBitesSeeAllCell.mealCookTime.text = (recipes?[indexPath.row].cookTime as NSNumber?)?.stringValue
         
-        quickBitesSeeAllCell.mealName.text = recipes?[indexPath.row].recipeName
-        quickBitesSeeAllCell.mealCookTime.text = recipes?[indexPath.row].cookTime
         
         
         return quickBitesSeeAllCell
