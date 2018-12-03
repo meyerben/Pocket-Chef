@@ -73,40 +73,35 @@ class YummlyAPI {
     
     class func parse(with data: Data) -> ([Recipe]?, String?){
         
-        if let jsonString = String(data: data, encoding: String.Encoding.utf8){
-            print(jsonString)
-        }
-        
+    
         guard let json = try? JSONSerialization.jsonObject(with: data, options: []),
             let rootNode = json as? [String:Any] else {
+                 //print("Whats Good")
                 return (nil, "unable to parse response from yummly server")
         }
         
-        guard let status = rootNode["status"] as? String, status == "OK" else {
-            return (nil, "Server did not return OK")
-        }
-        
-        
-        
+        //print("\(rootNode)")
         var recipes = [Recipe]()
+        print("RESULTS PRINTED HERE")
         
-        if let results = rootNode["results"] as? [[String: Any]]{
-            for result in results {
-                if let recipeName = result["recipeName"] as? String,
-                    let cookTime = result["totalTimeInSeconds"] as? String,
-                    let ingredients = result["ingredients"] as? String,
-                    let attribution = result["attributes"] as? String,
-                    let source = result["sourceDisplayName"] as? String,
-                    let id = result["id"] as? String{
-                    let recipe = Recipe(recipeName: recipeName, cookTime: cookTime, ingredients: ingredients, attribution: attribution, source: source, id: id)
-                recipes.append(recipe)
+        if let results = rootNode["matches"] as? [[String: Any]]{
+            for matches in results{
+                    if let id = matches["id"] as? String,
+                            //let ingredients = result["ingredients"] as? String,
+                            let cookTime = matches["totalTimeInSeconds"] as? Int,
+                                let recipeTitle = matches["recipeName"] as? String{
+                                let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTime, id: id)
+                                recipes.append(recipe)
+                                //print(id)
+                                //print(ingredients)
+                                //print(cookTime)
+                                //print(recipeTitle)
+                            }
+                        }
+                    }
+             return(recipes, nil)
             }
-            }
-            
-        }
-    return (recipes, nil)
-        
-        
     }
-    
-}
+
+
+

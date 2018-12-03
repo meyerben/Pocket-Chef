@@ -22,12 +22,12 @@ struct Media {
 }
 
 struct Recipe {
-    var recipeName: String
-    var cookTime: String
-    var ingredients: String
-    var attribution: String
-    var source: String
-    var id: String
+    var recipeName: Any
+    var cookTime: Any
+    //var ingredients: Any
+    //var attribution: String
+    //var source: String
+    var id: Any
 //    var displayTitle: String
 //    var mpaaRating: String
 //    var criticsPick: Int

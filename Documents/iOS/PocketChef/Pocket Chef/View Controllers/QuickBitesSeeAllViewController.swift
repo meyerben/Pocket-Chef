@@ -24,7 +24,6 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -64,11 +63,12 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let quickBitesSeeAllCell = tableView.dequeueReusableCell(withIdentifier: "quickBitesSeeAllCell", for: indexPath) as! QuickBitesSeeAllTableViewCell
         
         
-        quickBitesSeeAllCell.mealName.text = recipes?[indexPath.row].recipeName
-        quickBitesSeeAllCell.mealCookTime.text = recipes?[indexPath.row].cookTime
+        quickBitesSeeAllCell.mealName.text = recipes?[indexPath.row].recipeName as? String
+        quickBitesSeeAllCell.mealCookTime.text = recipes?[indexPath.row].cookTime as? String
         
         
         return quickBitesSeeAllCell
