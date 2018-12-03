@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		762CFB2A21B5A52200903E68 /* Pantry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762CFB2821B5A52200903E68 /* Pantry+CoreDataClass.swift */; };
+		762CFB2B21B5A52200903E68 /* Pantry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762CFB2921B5A52200903E68 /* Pantry+CoreDataProperties.swift */; };
 		763D177B219B6DCF00B51D3C /* QuickBitesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763D177A219B6DCF00B51D3C /* QuickBitesCollectionViewCell.swift */; };
 		763D177D219B6E1000B51D3C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763D177C219B6E1000B51D3C /* HomeViewController.swift */; };
 		763D1780219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763D177F219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		762CFB2821B5A52200903E68 /* Pantry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pantry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		762CFB2921B5A52200903E68 /* Pantry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pantry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		763D177A219B6DCF00B51D3C /* QuickBitesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBitesCollectionViewCell.swift; sourceTree = "<group>"; };
 		763D177C219B6E1000B51D3C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		763D177F219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBitesSeeAllViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +55,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		762CFB1F21B59E6900903E68 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		763D1779219B6DB900B51D3C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +94,8 @@
 		7BE43AB7218B77F50072738F = {
 			isa = PBXGroup;
 			children = (
+				762CFB2821B5A52200903E68 /* Pantry+CoreDataClass.swift */,
+				762CFB2921B5A52200903E68 /* Pantry+CoreDataProperties.swift */,
 				7BE43AC2218B77F50072738F /* Pocket Chef */,
 				7BE43AC1218B77F50072738F /* Products */,
 			);
@@ -99,6 +112,7 @@
 		7BE43AC2218B77F50072738F /* Pocket Chef */ = {
 			isa = PBXGroup;
 			children = (
+				762CFB1F21B59E6900903E68 /* CoreData */,
 				76F8BE50219DFFDD00952B7C /* Model */,
 				763D177E219B6E1900B51D3C /* View Controllers */,
 				763D1779219B6DB900B51D3C /* Cells */,
@@ -185,6 +199,7 @@
 			files = (
 				76C0257D219DE033009CEBA0 /* PantryViewController.swift in Sources */,
 				76F8BE52219E000500952B7C /* YummlyAPI.swift in Sources */,
+				762CFB2A21B5A52200903E68 /* Pantry+CoreDataClass.swift in Sources */,
 				763D1780219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift in Sources */,
 				763D177B219B6DCF00B51D3C /* QuickBitesCollectionViewCell.swift in Sources */,
 				7BE43AC4218B77F50072738F /* AppDelegate.swift in Sources */,
@@ -193,6 +208,7 @@
 				763D1782219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift in Sources */,
 				76C0257F219DE0C6009CEBA0 /* PantryItemTableViewCell.swift in Sources */,
 				76948B9C21B05322005BD497 /* RecipeModel.xcdatamodeld in Sources */,
+				762CFB2B21B5A52200903E68 /* Pantry+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

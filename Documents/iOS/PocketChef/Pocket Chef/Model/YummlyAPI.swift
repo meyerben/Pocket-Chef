@@ -85,6 +85,7 @@ class YummlyAPI {
         print("RESULTS PRINTED HERE")
         
         if let results = rootNode["matches"] as? [[String: Any]]{
+            print(rootNode)
             for matches in results{
                     if let id = matches["id"] as? String,
                             //let ingredients = result["ingredients"] as? String,
