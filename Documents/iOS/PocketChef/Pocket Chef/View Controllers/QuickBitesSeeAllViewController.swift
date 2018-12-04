@@ -73,7 +73,7 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
         
         quickBitesSeeAllCell.mealName.text = recipes?[indexPath.row].recipeName as? String
         quickBitesSeeAllCell.mealCookTime.text = (recipes?[indexPath.row].cookTime as NSNumber?)?.stringValue
-        
+        quickBitesSeeAllCell.mealRating.text = (recipes?[indexPath.row].recipeRating as NSNumber?)?.stringValue
         
         
         return quickBitesSeeAllCell

@@ -14,6 +14,8 @@ class QuickBitesSeeAllTableViewCell: UITableViewCell {
     @IBOutlet weak var mealCat: UILabel!
     @IBOutlet weak var mealName: UILabel!
     @IBOutlet weak var mealImg: UIImageView!
+    @IBOutlet weak var mealRating: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

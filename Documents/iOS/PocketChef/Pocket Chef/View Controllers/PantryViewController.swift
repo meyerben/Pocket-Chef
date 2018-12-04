@@ -61,6 +61,7 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         pantryAlert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (_) in
             let textField = pantryAlert.textFields![0]
         
+            
             self.pantryArray.append(textField.text!)
             self.pantryTblView.reloadData()
         }))
