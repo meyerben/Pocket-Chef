@@ -95,8 +95,11 @@ class YummlyAPI {
                                 let recipeRating = matches["rating"] as? Int,
                                 let imageUrlBySizeNode = matches["imageUrlsBySize"] as? [String:String],
                                 let recipeImg = imageUrlBySizeNode["90"]{
+                                let updatedCookTime = cookTime/60
+                                let cookTimeWithMin = "\(updatedCookTime) min"
                                  let media = Media(srcUrlString: recipeImg)
-                        let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTime, recipeRating: recipeRating, id: id, media: media)
+                        let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTimeWithMin, recipeRating: recipeRating, id: id, media: media)
+
                                 recipes.append(recipe)
                                 //print(id)
                                 //print(ingredients)
