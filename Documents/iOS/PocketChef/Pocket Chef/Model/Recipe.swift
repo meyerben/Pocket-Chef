@@ -21,7 +21,7 @@ struct Media {
 struct Recipe {
     var recipeName: Any
     var cookTime: Any
-    var recipeRating: Int
+    var recipeRating: Any
     //var ingredients: Any
     //var attribution: String
     //var source: String

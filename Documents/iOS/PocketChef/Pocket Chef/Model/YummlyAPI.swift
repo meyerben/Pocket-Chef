@@ -97,8 +97,9 @@ class YummlyAPI {
                                 let recipeImg = imageUrlBySizeNode["90"]{
                                 let updatedCookTime = cookTime/60
                                 let cookTimeWithMin = "\(updatedCookTime) min"
-                                 let media = Media(srcUrlString: recipeImg)
-                        let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTimeWithMin, recipeRating: recipeRating, id: id, media: media)
+                                let recipeRatingWithText = "\(recipeRating) Stars"
+                                let media = Media(srcUrlString: recipeImg)
+                                let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTimeWithMin, recipeRating: recipeRatingWithText, id: id, media: media)
 
                                 recipes.append(recipe)
                                 //print(id)
