@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -18,6 +19,32 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Pantry", in: context)
+        let newPantyItem = NSManagedObject(entity: entity!, insertInto: context)
+        
+        newPantyItem.setValue("Bananas", forKey: "foodItem")
+        newPantyItem.setValue("Hot Dogs", forKey: "foodItem")
+        
+        do{
+            try context.save()
+        } catch {
+            print("Failed Saving")
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Pantry")
+        request.returnsObjectsAsFaults = false
+        
+        do{
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject]{
+                print(data.value(forKey: "foodItem") as! String)
+            }
+        } catch {
+            print("Failed")
+        }
+        
     }
     
     @IBAction func addPantryItemBtn(_ sender: Any) {
@@ -33,7 +60,8 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         pantryAlert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (_) in
             let textField = pantryAlert.textFields![0]
-
+        
+            
             self.pantryArray.append(textField.text!)
             self.pantryTblView.reloadData()
         }))

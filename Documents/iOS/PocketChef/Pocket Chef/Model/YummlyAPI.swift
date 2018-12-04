@@ -85,15 +85,18 @@ class YummlyAPI {
         print("RESULTS PRINTED HERE")
         
         if let results = rootNode["matches"] as? [[String: Any]]{
+            print(rootNode)
+            //Need to append the id of the recipe to this URL https://www.yummly.com/recipe/&RECIPE-ID this will give the instructions and cals
             for matches in results{
                     if let id = matches["id"] as? String,
                             //let ingredients = result["ingredients"] as? String,
                             let cookTime = matches["totalTimeInSeconds"] as? Int,
                                 let recipeTitle = matches["recipeName"] as? String,
+                                let recipeRating = matches["rating"] as? Int,
                                 let imageUrlBySizeNode = matches["imageUrlsBySize"] as? [String:String],
-                                let recipeImg = imageUrlBySizeNode["90"] {
+                                let recipeImg = imageUrlBySizeNode["90"]{
                                  let media = Media(srcUrlString: recipeImg)
-                        let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTime, id: id, media: media)
+                        let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTime, recipeRating: recipeRating, id: id, media: media)
                                 recipes.append(recipe)
                                 //print(id)
                                 //print(ingredients)
