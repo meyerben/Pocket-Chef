@@ -85,6 +85,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             chickenCell.mealName.text = chickenRecipes?[indexPath.row].recipeName as? String
         
             return chickenCell
+            
         } else if collectionView == self.beefRecipesCollectionView{
             let beefCell = collectionView.dequeueReusableCell(withReuseIdentifier: "beefCell", for: indexPath) as! BeefRecipesCollectionViewCell
             
@@ -97,6 +98,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             beefCell.recipeName.text = beefRecipes?[indexPath.row].recipeName as? String
             
             return beefCell
+            
         } else if collectionView == self.porkRecipesCollectionView{
             let porkCell = collectionView.dequeueReusableCell(withReuseIdentifier: "porkCell", for: indexPath) as! PorkRecipesCollectionViewCell
             
@@ -109,6 +111,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             porkCell.recipeName.text = porkRecipes?[indexPath.row].recipeName as? String
             
             return porkCell
+            
         } else{
             return UICollectionViewCell()
         }
