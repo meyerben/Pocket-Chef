@@ -38,6 +38,7 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
         // Do any additional setup after loading the view.
         self.quickBitesSeeAllTblView.reloadData()
         
+        searchController.isActive = true
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -64,7 +65,9 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let quickBitesSeeAllCell = tableView.dequeueReusableCell(withIdentifier: "quickBitesSeeAllCell", for: indexPath) as! QuickBitesSeeAllTableViewCell
+        let quickBitesSeeAllCell = tableView.dequeueReusableCell(withIdentifier: "quickBitesSeeAllCell", for: indexPath)
+        
+        if let quickBitesSeeAllCell = quickBitesSeeAllCell as? QuickBitesSeeAllTableViewCell{
 
         if let imageUrl = URL(string: recipes?[indexPath.row].media.srcUrlString ?? "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiLypSZ2oLfAhWno4MKHTubAqgQjRx6BAgBEAU&url=https%3A%2F%2Fwww.digitalcitizen.life%2Fset-windows-live-photo-gallery-2011-default-image-viewer&psig=AOvVaw24LBSQ6wWK475KxaeY3eyI&ust=1543893636425251"),
             let imageData = try? Data(contentsOf: imageUrl) {
@@ -72,11 +75,36 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
         }
         
         quickBitesSeeAllCell.mealName.text = recipes?[indexPath.row].recipeName as? String
-        quickBitesSeeAllCell.mealCookTime.text = (recipes?[indexPath.row].cookTime as NSNumber?)?.stringValue
-        quickBitesSeeAllCell.mealRating.text = (recipes?[indexPath.row].recipeRating as NSNumber?)?.stringValue
+        quickBitesSeeAllCell.mealCookTime.text = recipes?[indexPath.row].cookTime
+        quickBitesSeeAllCell.mealRating.text = recipes?[indexPath.row].recipeRating
         
-        
+        }
         return quickBitesSeeAllCell
+    }
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           searchController.isActive = false
+//        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let detailedRecipe =  mainStoryBoard.instantiateViewController(withIdentifier: "DetailedRecipeViewController") as! DetailedRecipeViewController
+//        
+//       detailedRecipe.recipeName.text = recipes?[indexPath.row].recipeName as? String
+//        self.navigationController?.pushViewController(detailedRecipe, animated: true)
+        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let indexPath = quickBitesSeeAllTblView.indexPathForSelectedRow{
+            let selectedRow = indexPath.row
+            let detailedRecipe = segue.destination as! DetailedRecipeViewController
+            //detailVC.park = self.parksArray[selectedRow]
+            detailedRecipe.recipeN = self.recipes?[selectedRow].recipeName as! String
+            detailedRecipe.recipeTime = self.recipes?[selectedRow].cookTime ?? "No Cook Time Found"
+            detailedRecipe.recipeRate = self.recipes?[selectedRow].recipeRating ?? "No Rating Found"
+//            detailedRecipe.recipeCategory = self.recipes?[selectedRow].category ?? "No Category Found"
+//            detailedRecipe.recipeName.text = self.recipes?[selectedRow].recipeName as? String
+            detailedRecipe.recipeLink = self.recipes?[selectedRow].recipeURL ?? "No URL Found"
+            detailedRecipe.recipeImgUrl = self.recipes?[indexPath.row].media.srcUrlString ?? "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiLypSZ2oLfAhWno4MKHTubAqgQjRx6BAgBEAU&url=https%3A%2F%2Fwww.digitalcitizen.life%2Fset-windows-live-photo-gallery-2011-default-image-viewer&psig=AOvVaw24LBSQ6wWK475KxaeY3eyI&ust=1543893636425251"
+        }
     }
 
 }
