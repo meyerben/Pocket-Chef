@@ -30,10 +30,7 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
         searchController.searchBar.sizeToFit()
         quickBitesSeeAllTblView.tableHeaderView = searchController.searchBar
         
-        
-        let editButtonItem = self.editButtonItem
-        self.navigationItem.rightBarButtonItem = editButtonItem
-        
+    
         searchController.searchBar.text = initialSearchText
         // Do any additional setup after loading the view.
         self.quickBitesSeeAllTblView.reloadData()

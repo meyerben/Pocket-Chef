@@ -14,6 +14,9 @@
 		767E8097219E13D000526B1D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E8096219E13D000526B1D /* Recipe.swift */; };
 		76948B9C21B05322005BD497 /* RecipeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76948B9A21B05322005BD497 /* RecipeModel.xcdatamodeld */; };
 		76A1D04121B700D200DFF588 /* DetailedRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1D04021B700D200DFF588 /* DetailedRecipeViewController.swift */; };
+		76AC06F821B786EB007B846F /* YummlySearchByIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC06F721B786EB007B846F /* YummlySearchByIngredient.swift */; };
+		76AC06FA21B78805007B846F /* SearchByIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC06F921B78805007B846F /* SearchByIngredientViewController.swift */; };
+		76AC06FC21B789C3007B846F /* SearchByIngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC06FB21B789C3007B846F /* SearchByIngredientsTableViewCell.swift */; };
 		76C0257D219DE033009CEBA0 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0257C219DE033009CEBA0 /* PantryViewController.swift */; };
 		76C0257F219DE0C6009CEBA0 /* PantryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */; };
 		76F29FE021B7460100F8BAB7 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F29FDF21B7460100F8BAB7 /* WebKitViewController.swift */; };
@@ -34,6 +37,9 @@
 		767E8096219E13D000526B1D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		76948B9B21B05322005BD497 /* RecipeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeModel.xcdatamodel; sourceTree = "<group>"; };
 		76A1D04021B700D200DFF588 /* DetailedRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRecipeViewController.swift; sourceTree = "<group>"; };
+		76AC06F721B786EB007B846F /* YummlySearchByIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummlySearchByIngredient.swift; sourceTree = "<group>"; };
+		76AC06F921B78805007B846F /* SearchByIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByIngredientViewController.swift; sourceTree = "<group>"; };
+		76AC06FB21B789C3007B846F /* SearchByIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByIngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		76C0257C219DE033009CEBA0 /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
 		76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItemTableViewCell.swift; sourceTree = "<group>"; };
 		76F29FDF21B7460100F8BAB7 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +80,7 @@
 				76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */,
 				76F29FE121B75D3300F8BAB7 /* BeefRecipesCollectionViewCell.swift */,
 				76F29FE321B7630A00F8BAB7 /* PorkRecipesCollectionViewCell.swift */,
+				76AC06FB21B789C3007B846F /* SearchByIngredientsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -86,6 +93,7 @@
 				76C0257C219DE033009CEBA0 /* PantryViewController.swift */,
 				76A1D04021B700D200DFF588 /* DetailedRecipeViewController.swift */,
 				76F29FDF21B7460100F8BAB7 /* WebKitViewController.swift */,
+				76AC06F921B78805007B846F /* SearchByIngredientViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -95,6 +103,7 @@
 			children = (
 				76F8BE51219E000500952B7C /* YummlyAPI.swift */,
 				767E8096219E13D000526B1D /* Recipe.swift */,
+				76AC06F721B786EB007B846F /* YummlySearchByIngredient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,10 +218,13 @@
 				76F29FE021B7460100F8BAB7 /* WebKitViewController.swift in Sources */,
 				763D1780219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift in Sources */,
 				76F29FE221B75D3300F8BAB7 /* BeefRecipesCollectionViewCell.swift in Sources */,
+				76AC06FC21B789C3007B846F /* SearchByIngredientsTableViewCell.swift in Sources */,
 				763D177B219B6DCF00B51D3C /* QuickBitesCollectionViewCell.swift in Sources */,
 				7BE43AC4218B77F50072738F /* AppDelegate.swift in Sources */,
 				763D177D219B6E1000B51D3C /* HomeViewController.swift in Sources */,
 				767E8097219E13D000526B1D /* Recipe.swift in Sources */,
+				76AC06FA21B78805007B846F /* SearchByIngredientViewController.swift in Sources */,
+				76AC06F821B786EB007B846F /* YummlySearchByIngredient.swift in Sources */,
 				76A1D04121B700D200DFF588 /* DetailedRecipeViewController.swift in Sources */,
 				763D1782219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift in Sources */,
 				76C0257F219DE0C6009CEBA0 /* PantryItemTableViewCell.swift in Sources */,

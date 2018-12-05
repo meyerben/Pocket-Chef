@@ -1,16 +1,14 @@
 //
-//  YummlyAPI.swift
+//  YummlySearchByIngredient.swift
 //  Pocket Chef
 //
-//  Created by Jaylin Phipps on 11/15/18.
+//  Created by Jaylin Phipps on 12/4/18.
 //  Copyright © 2018 Ryan Rottmann. All rights reserved.
 //
 
 import Foundation
 
-
-class YummlyAPI {
-    
+class YummlySearchByIngredient{
     //http://api.yummly.com/v1/api/recipes?_app_id=d757866f&_app_key=41ceb77eea15ac39dcb1a1f2f2aaf317&your%20_search_parameters
     
     static let baseUrlString = "https://api.yummly.com/v1/api/recipes?_app_id=d757866f&_app_key="
@@ -27,7 +25,7 @@ class YummlyAPI {
             return
         }
         
-        let urlString = baseUrlString + apiKey + "&q=" + escapedSearchText
+        let urlString = baseUrlString + apiKey + "&allowedIngredient[]=" + escapedSearchText
         
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
@@ -64,7 +62,7 @@ class YummlyAPI {
             } else {
                 dispatchQueueForHandler.async(execute: {
                     completionHandler(userInfo, recipes, nil)
-                    })
+                })
             }
         }
         task.resume()
@@ -73,10 +71,10 @@ class YummlyAPI {
     
     class func parse(with data: Data) -> ([Recipe]?, String?){
         
-    
+        
         guard let json = try? JSONSerialization.jsonObject(with: data, options: []),
             let rootNode = json as? [String:Any] else {
-                 //print("Whats Good")
+                //print("Whats Good")
                 return (nil, "unable to parse response from yummly server")
         }
         
@@ -85,33 +83,31 @@ class YummlyAPI {
         print("RESULTS PRINTED HERE")
         
         if let results = rootNode["matches"] as? [[String: Any]]{
-            print(results)
+            //print(results)
             //Need to append the id of the recipe to this URL https://www.yummly.com/recipe/&RECIPE-ID this will give the instructions and cals
             for matches in results{
-                    if let id = matches["id"] as? String,
-                            //let ingredients = result["ingredients"] as? String,
-                            let cookTime = matches["totalTimeInSeconds"] as? Int,
-                                let recipeTitle = matches["recipeName"] as? String,
-                                let recipeRating = matches["rating"] as? Int,
-                                let imageUrlBySizeNode = matches["imageUrlsBySize"] as? [String:String],
-                                let recipeImg = imageUrlBySizeNode["90"]{
-                                let recipeURL = "https://www.yummly.com/recipe/\(id)"
-                                let cookTimeInMin = (cookTime/60)
-                                let cookTimeAppend = "\(cookTimeInMin) minutes"
-                                let ratingAppend = "\(recipeRating) out of 5 stars"
-                                 let media = Media(srcUrlString: recipeImg)
-                        let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTimeAppend, recipeRating: ratingAppend, recipeURL: recipeURL, id: id, media: media)
-                                recipes.append(recipe)
-                                //print(id)
-                                //print(ingredients)
-                                //print(cookTime)
-                                //print(recipeTitle)
-                            }
-                        }
-                    }
-             return(recipes, nil)
+                if let id = matches["id"] as? String,
+                    //let ingredients = result["ingredients"] as? String,
+                    let cookTime = matches["totalTimeInSeconds"] as? Int,
+                    let recipeTitle = matches["recipeName"] as? String,
+                    let recipeRating = matches["rating"] as? Int,
+                    let imageUrlBySizeNode = matches["imageUrlsBySize"] as? [String:String],
+                    let recipeImg = imageUrlBySizeNode["90"]{
+                    let recipeURL = "https://www.yummly.com/recipe/\(id)"
+                    let cookTimeInMin = (cookTime/60)
+                    let cookTimeAppend = "\(cookTimeInMin) minutes"
+                    let ratingAppend = "\(recipeRating) out of 5 stars"
+                    let media = Media(srcUrlString: recipeImg)
+                    let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTimeAppend, recipeRating: ratingAppend, recipeURL: recipeURL, id: id, media: media)
+                    recipes.append(recipe)
+                    //print(id)
+                    //print(ingredients)
+                    //print(cookTime)
+                    //print(recipeTitle)
+                }
             }
+        }
+        return(recipes, nil)
     }
-
-
+}
 
