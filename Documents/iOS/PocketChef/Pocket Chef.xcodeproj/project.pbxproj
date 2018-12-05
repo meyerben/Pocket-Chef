@@ -16,6 +16,7 @@
 		76A1D04121B700D200DFF588 /* DetailedRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1D04021B700D200DFF588 /* DetailedRecipeViewController.swift */; };
 		76C0257D219DE033009CEBA0 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0257C219DE033009CEBA0 /* PantryViewController.swift */; };
 		76C0257F219DE0C6009CEBA0 /* PantryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */; };
+		76F29FE021B7460100F8BAB7 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F29FDF21B7460100F8BAB7 /* WebKitViewController.swift */; };
 		76F8BE52219E000500952B7C /* YummlyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8BE51219E000500952B7C /* YummlyAPI.swift */; };
 		7BE43AC4218B77F50072738F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE43AC3218B77F50072738F /* AppDelegate.swift */; };
 		7BE43AC9218B77F50072738F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE43AC7218B77F50072738F /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		76A1D04021B700D200DFF588 /* DetailedRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRecipeViewController.swift; sourceTree = "<group>"; };
 		76C0257C219DE033009CEBA0 /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
 		76C0257E219DE0C6009CEBA0 /* PantryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItemTableViewCell.swift; sourceTree = "<group>"; };
+		76F29FDF21B7460100F8BAB7 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		76F8BE51219E000500952B7C /* YummlyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummlyAPI.swift; sourceTree = "<group>"; };
 		7BE43AC0218B77F50072738F /* Pocket Chef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Chef.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE43AC3218B77F50072738F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				763D177F219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift */,
 				76C0257C219DE033009CEBA0 /* PantryViewController.swift */,
 				76A1D04021B700D200DFF588 /* DetailedRecipeViewController.swift */,
+				76F29FDF21B7460100F8BAB7 /* WebKitViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			files = (
 				76C0257D219DE033009CEBA0 /* PantryViewController.swift in Sources */,
 				76F8BE52219E000500952B7C /* YummlyAPI.swift in Sources */,
+				76F29FE021B7460100F8BAB7 /* WebKitViewController.swift in Sources */,
 				763D1780219B71DE00B51D3C /* QuickBitesSeeAllViewController.swift in Sources */,
 				763D177B219B6DCF00B51D3C /* QuickBitesCollectionViewCell.swift in Sources */,
 				7BE43AC4218B77F50072738F /* AppDelegate.swift in Sources */,

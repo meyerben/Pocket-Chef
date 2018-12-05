@@ -27,6 +27,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         quickBitesCollectionView.showsHorizontalScrollIndicator = false
         
         self.quickBitesCollectionView.reloadData()
+        
+        //Call the YUMMLY API HERE
     }
     
     //Quick Bites Collection View
