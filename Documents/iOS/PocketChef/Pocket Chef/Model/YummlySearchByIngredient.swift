@@ -88,6 +88,7 @@ class YummlySearchByIngredient{
             for matches in results{
                 if let id = matches["id"] as? String,
                     //let ingredients = result["ingredients"] as? String,
+                    //let recipeIngredient = matches["ingredients"] as? String,
                     let cookTime = matches["totalTimeInSeconds"] as? Int,
                     let recipeTitle = matches["recipeName"] as? String,
                     let recipeRating = matches["rating"] as? Int,
@@ -98,6 +99,7 @@ class YummlySearchByIngredient{
                     let cookTimeAppend = "\(cookTimeInMin) minutes"
                     let ratingAppend = "\(recipeRating) out of 5 stars"
                     let media = Media(srcUrlString: recipeImg)
+                    
                     let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTimeAppend, recipeRating: ratingAppend, recipeURL: recipeURL, id: id, media: media)
                     recipes.append(recipe)
                     //print(id)

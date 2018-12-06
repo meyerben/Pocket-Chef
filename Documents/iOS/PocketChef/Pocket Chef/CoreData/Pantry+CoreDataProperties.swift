@@ -2,7 +2,7 @@
 //  Pantry+CoreDataProperties.swift
 //  Pocket Chef
 //
-//  Created by Jaylin Phipps on 12/3/18.
+//  Created by Jaylin Phipps on 12/6/18.
 //  Copyright © 2018 Ryan Rottmann. All rights reserved.
 //
 //

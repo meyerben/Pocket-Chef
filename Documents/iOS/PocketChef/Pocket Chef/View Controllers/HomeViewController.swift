@@ -117,4 +117,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         //return UICollectionViewCell()
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let indexPath = quickBitesCollectionView.indexPat{
+//            
+//        }
+//    }
 }
