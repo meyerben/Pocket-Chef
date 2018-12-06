@@ -42,6 +42,13 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func addPantryItemBtn(_ sender: Any) {
+        pantryTblView.reloadData()
+        
+        if ingredientTxt.text == ""{
+            print("Error")
+            return
+        }
+        
         guard let itemName = ingredientTxt.text else {
             return
         }
@@ -65,9 +72,24 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let pantryItemCell = tableView.dequeueReusableCell(withIdentifier: "pantryItemCell", for: indexPath) as! PantryItemTableViewCell
         
         pantryItemCell.pantryItemLbl?.text = pantryArray[indexPath.row].foodItem
-        
         return pantryItemCell
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete", handler: {action, view, completion in
+            let pantry = self.pantryArray[indexPath.row]
+            do{
+                pantry.managedObjectContext?.delete(pantry)
+                try pantry.managedObjectContext?.save()
+                self.pantryArray.remove(at: indexPath.row)
+                self.pantryTblView.deleteRows(at: [indexPath], with: .automatic)
+                completion(true)
+            } catch {
+                print("Failed to delete")
+                completion(false)
+            }
+        })
+        return UISwipeActionsConfiguration(actions: [action])
+    }
     
 }
