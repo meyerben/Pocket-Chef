@@ -202,6 +202,7 @@
                                 </constraints>
                                 <state key="normal" title="See All"/>
                                 <connections>
+                                    <action selector="seeAllChicken:" destination="pTD-nV-2B1" eventType="touchUpInside" id="Zua-3z-XJa"/>
                                     <segue destination="hxJ-UX-92G" kind="show" id="4TE-rw-gmb"/>
                                 </connections>
                             </button>
@@ -326,13 +327,13 @@
                                     <outlet property="delegate" destination="pTD-nV-2B1" id="NFS-y0-boV"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pork Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt0-ip-rFt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pork Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt0-ip-rFt">
                                 <rect key="frame" x="16" y="471" width="111" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bGi-6P-w3M">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bGi-6P-w3M">
                                 <rect key="frame" x="16" y="500" width="343" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -388,15 +389,20 @@
                                     <outlet property="delegate" destination="pTD-nV-2B1" id="wlq-Sd-ISd"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLp-aq-0fG">
-                                <rect key="frame" x="16" y="658" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search By Ingredient"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbV-0q-Yuq">
+                                <rect key="frame" x="312" y="284" width="47" height="30"/>
+                                <state key="normal" title="See All"/>
+                                <connections>
+                                    <action selector="seeAllBeef:" destination="pTD-nV-2B1" eventType="touchUpInside" id="qdT-Ra-xdt"/>
+                                    <segue destination="hxJ-UX-92G" kind="show" id="Rp9-by-0oe"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd2-vf-VH0">
-                                <rect key="frame" x="128" y="699" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search By Pantry"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF9-U3-837">
+                                <rect key="frame" x="9" y="656" width="350" height="34"/>
+                                <state key="normal" title="Search" image="Rectangle 2"/>
+                                <connections>
+                                    <segue destination="hxJ-UX-92G" kind="show" id="sds-NA-dyv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -406,21 +412,28 @@
                             <constraint firstItem="jt0-ip-rFt" firstAttribute="leading" secondItem="iHw-wJ-XHY" secondAttribute="leading" constant="16" id="42n-OP-rzB"/>
                             <constraint firstItem="iHw-wJ-XHY" firstAttribute="trailing" secondItem="jt0-ip-rFt" secondAttribute="trailing" constant="248" id="7b9-3Y-WVI"/>
                             <constraint firstItem="InO-FD-Qbt" firstAttribute="top" secondItem="iHw-wJ-XHY" secondAttribute="top" constant="9" id="8CM-yQ-bGX"/>
+                            <constraint firstItem="nbV-0q-Yuq" firstAttribute="top" secondItem="gJ5-mk-04D" secondAttribute="bottom" constant="8" id="9xS-rh-7lS"/>
                             <constraint firstItem="bGi-6P-w3M" firstAttribute="leading" secondItem="iHw-wJ-XHY" secondAttribute="leading" constant="16" id="Adq-gB-l4f"/>
+                            <constraint firstItem="OF9-U3-837" firstAttribute="top" secondItem="bGi-6P-w3M" secondAttribute="bottom" constant="8" id="Cvk-g2-kPw"/>
                             <constraint firstItem="gJ5-mk-04D" firstAttribute="top" secondItem="eBi-0t-Qv2" secondAttribute="bottom" constant="3" id="F5R-dF-ggy"/>
                             <constraint firstItem="iHw-wJ-XHY" firstAttribute="trailing" secondItem="bGi-6P-w3M" secondAttribute="trailing" constant="16" id="GqH-sP-oxA"/>
                             <constraint firstItem="iHw-wJ-XHY" firstAttribute="trailing" secondItem="mHQ-p4-27w" secondAttribute="trailing" constant="16" id="Hue-6d-q2H"/>
+                            <constraint firstItem="iHw-wJ-XHY" firstAttribute="bottom" secondItem="OF9-U3-837" secondAttribute="bottom" constant="41" id="Iqt-yS-qSb"/>
                             <constraint firstItem="mHQ-p4-27w" firstAttribute="top" secondItem="17d-XP-JHs" secondAttribute="bottom" constant="8" id="Lep-jV-NTk"/>
                             <constraint firstItem="eBi-0t-Qv2" firstAttribute="top" secondItem="iHw-wJ-XHY" secondAttribute="top" constant="5" id="NMZ-7n-ib2"/>
+                            <constraint firstItem="mHQ-p4-27w" firstAttribute="top" secondItem="nbV-0q-Yuq" secondAttribute="bottom" constant="-1" id="TaV-Se-gVq"/>
+                            <constraint firstItem="iHw-wJ-XHY" firstAttribute="trailing" secondItem="nbV-0q-Yuq" secondAttribute="trailing" constant="16" id="Vm2-a8-9rx"/>
                             <constraint firstItem="jt0-ip-rFt" firstAttribute="top" secondItem="mHQ-p4-27w" secondAttribute="bottom" constant="8" id="VvB-BS-gP7"/>
+                            <constraint firstItem="iHw-wJ-XHY" firstAttribute="trailing" secondItem="OF9-U3-837" secondAttribute="trailing" constant="164" id="Wes-90-UN3"/>
                             <constraint firstItem="17d-XP-JHs" firstAttribute="leading" secondItem="iHw-wJ-XHY" secondAttribute="leading" constant="16" id="YIe-LT-0Bl"/>
+                            <constraint firstItem="OF9-U3-837" firstAttribute="leading" secondItem="iHw-wJ-XHY" secondAttribute="leading" constant="163" id="bw9-U9-hcI"/>
                             <constraint firstItem="eBi-0t-Qv2" firstAttribute="leading" secondItem="InO-FD-Qbt" secondAttribute="trailing" constant="10" id="fEJ-cw-bX0"/>
+                            <constraint firstItem="nbV-0q-Yuq" firstAttribute="leading" secondItem="17d-XP-JHs" secondAttribute="trailing" constant="186" id="h0d-ar-Dtv"/>
                             <constraint firstItem="gJ5-mk-04D" firstAttribute="top" secondItem="InO-FD-Qbt" secondAttribute="bottom" constant="8" id="k0O-uP-Aoh"/>
                             <constraint firstItem="mHQ-p4-27w" firstAttribute="leading" secondItem="iHw-wJ-XHY" secondAttribute="leading" constant="16" id="kN5-RB-gb0"/>
                             <constraint firstItem="17d-XP-JHs" firstAttribute="top" secondItem="gJ5-mk-04D" secondAttribute="bottom" constant="8" id="lMB-kT-DAf"/>
                             <constraint firstItem="gJ5-mk-04D" firstAttribute="leading" secondItem="iHw-wJ-XHY" secondAttribute="leading" constant="16" id="ooX-cC-gau"/>
                             <constraint firstItem="iHw-wJ-XHY" firstAttribute="trailing" secondItem="eBi-0t-Qv2" secondAttribute="trailing" constant="16" id="ue7-WP-fLm"/>
-                            <constraint firstItem="iHw-wJ-XHY" firstAttribute="trailing" secondItem="17d-XP-JHs" secondAttribute="trailing" constant="249" id="x4P-GO-Pxa"/>
                             <constraint firstItem="InO-FD-Qbt" firstAttribute="leading" secondItem="iHw-wJ-XHY" secondAttribute="leading" constant="16" id="yL7-hg-sHp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iHw-wJ-XHY"/>
@@ -850,9 +863,11 @@
     <resources>
         <image name="Pantry Icon" width="26" height="28"/>
         <image name="Recipes Icon" width="25" height="30"/>
+        <image name="Rectangle 2" width="375" height="34"/>
         <image name="Star" width="30" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="DRc-9R-OaB"/>
+        <segue reference="4TE-rw-gmb"/>
     </inferredMetricsTieBreakers>
 </document>

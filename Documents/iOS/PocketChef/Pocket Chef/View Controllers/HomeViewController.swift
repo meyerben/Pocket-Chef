@@ -16,7 +16,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var porkRecipesCollectionView: UICollectionView!
     
-    let initalSearchText = "chicken"
+    
+    
+    var initalSearchText = ""
     
     var searchController: UISearchController!
     
@@ -118,9 +120,23 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let indexPath = quickBitesCollectionView.indexPat{
-//            
-//        }
-//    }
+    //Figure out how to show all based on button click so weather its chicken or beef they want to search for
+    
+    @IBAction func seeAllChicken(_ sender: Any) {
+        if initalSearchText == ""{
+            initalSearchText = "Chicken"
+        }
+    }
+    
+    @IBAction func seeAllBeef(_ sender: Any) {
+        if initalSearchText == ""{
+            initalSearchText = "Beef"
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let seeAll = segue.destination as! QuickBitesSeeAllViewController
+        seeAll.initialSearchText = self.initalSearchText
+    }
+    
 }

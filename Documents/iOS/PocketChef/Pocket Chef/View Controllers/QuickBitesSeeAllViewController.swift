@@ -10,7 +10,7 @@ import UIKit
 
 class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
-    let initialSearchText = "chicken"
+    var initialSearchText = ""
     
     var searchController: UISearchController!
     
