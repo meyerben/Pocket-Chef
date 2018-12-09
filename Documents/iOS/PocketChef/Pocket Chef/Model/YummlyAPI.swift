@@ -85,7 +85,7 @@ class YummlyAPI {
         print("RESULTS PRINTED HERE")
         
         if let results = rootNode["matches"] as? [[String: Any]]{
-            //print(rootNode)
+            print(rootNode)
             //Need to append the id of the recipe to this URL https://www.yummly.com/recipe/&RECIPE-ID this will give the instructions and cals
             for matches in results{
                     if let id = matches["id"] as? String,
