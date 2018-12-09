@@ -28,6 +28,7 @@ class WebKitViewController: UIViewController, WKNavigationDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        print(recipeURL)
         getUrlCall()
     }
     

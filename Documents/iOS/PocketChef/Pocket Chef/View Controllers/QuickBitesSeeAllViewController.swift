@@ -10,13 +10,15 @@ import UIKit
 
 class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
-    let initialSearchText = "chicken"
+    var initialSearchText = ""
     
     var searchController: UISearchController!
     
     @IBOutlet weak var quickBitesSeeAllTblView: UITableView!
     
     var recipes: [Recipe]?
+    
+    var favorites: Favorites?
     
     
     override func viewDidLoad() {
@@ -79,14 +81,24 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
         return quickBitesSeeAllCell
     }
     
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           searchController.isActive = false
-//        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let detailedRecipe =  mainStoryBoard.instantiateViewController(withIdentifier: "DetailedRecipeViewController") as! DetailedRecipeViewController
-//        
-//       detailedRecipe.recipeName.text = recipes?[indexPath.row].recipeName as? String
-//        self.navigationController?.pushViewController(detailedRecipe, animated: true)
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, indexPath) in
+            // share item at indexPath
+            
+            self.favorites = Favorites(favRecipeName: self.recipes?[indexPath.row].recipeName as! String, favRecipeURL: self.recipes?[indexPath.row].recipeURL ?? "www.yummly.com")
+            
+            do{
+                try self.favorites?.managedObjectContext?.save()
+            } catch {
+                print("Failed to save")
+            }
+            //print(self.favorites?.favRecipeName!)
         }
+        
+        favorite.backgroundColor = UIColor.green
+        
+        return [favorite]
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -102,6 +114,7 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
             detailedRecipe.recipeLink = self.recipes?[selectedRow].recipeURL ?? "No URL Found"
             detailedRecipe.recipeImgUrl = self.recipes?[indexPath.row].media.srcUrlString ?? "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiLypSZ2oLfAhWno4MKHTubAqgQjRx6BAgBEAU&url=https%3A%2F%2Fwww.digitalcitizen.life%2Fset-windows-live-photo-gallery-2011-default-image-viewer&psig=AOvVaw24LBSQ6wWK475KxaeY3eyI&ust=1543893636425251"
         }
+        searchController.dismiss(animated: true, completion: {})
     }
 
 }
