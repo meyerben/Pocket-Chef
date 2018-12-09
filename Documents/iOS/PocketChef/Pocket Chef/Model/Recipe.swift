@@ -23,7 +23,7 @@ struct Recipe {
     var cookTime: String
     var recipeRating: String
     var recipeURL: String
-    //var recipeIngredients: Any
+    //var recipeIngredients: String
     //var category: String
     var id: Any
     var media: Media

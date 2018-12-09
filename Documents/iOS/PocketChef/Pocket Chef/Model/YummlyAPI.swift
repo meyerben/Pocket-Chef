@@ -102,10 +102,10 @@ class YummlyAPI {
                                 let ratingAppend = "\(recipeRating) out of 5 stars"
                                 //print(recipeIngredients)
                                 let media = Media(srcUrlString: recipeImg)
-                                let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTimeAppend, recipeRating: ratingAppend, recipeURL: recipeURL, id: id, media: media)
+                        let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTimeAppend, recipeRating: ratingAppend, recipeURL: recipeURL, id: id, media: media)
                                 recipes.append(recipe)
                                 //print(id)
-                                //print(ingredients)
+                                //print(recipeIngredients)
                                 //print(cookTime)
                                 //print(recipeTitle)
                             }

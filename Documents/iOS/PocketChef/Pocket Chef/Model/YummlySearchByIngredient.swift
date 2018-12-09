@@ -103,7 +103,7 @@ class YummlySearchByIngredient{
                     let recipe = Recipe(recipeName: recipeTitle, cookTime: cookTimeAppend, recipeRating: ratingAppend, recipeURL: recipeURL, id: id, media: media)
                     recipes.append(recipe)
                     //print(id)
-                    //print(ingredients)
+                    //print(recipeIngredient)
                     //print(cookTime)
                     //print(recipeTitle)
                 }

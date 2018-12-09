@@ -17,6 +17,7 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var foodPantry: Pantry?
     var pantryArray = [Pantry]()
+    var currentIndex = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,22 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } catch {
             print("Failed to save")
         }
-        pantryTblView.reloadData()
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+            
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let request: NSFetchRequest<Pantry> = Pantry.fetchRequest()
+        
+        do{
+            pantryArray = try context.fetch(request)
+            pantryTblView.reloadData()
+        } catch {
+            print("Failed to get pantry items")
+        }
+        
+        ingredientTxt.text = ""
     }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,4 +108,20 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return UISwipeActionsConfiguration(actions: [action])
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        
+        currentIndex = pantryArray[indexPath.row].foodItem!
+        print(currentIndex)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let pantrySearch = segue.destination as! SearchByIngredientViewController
+        
+        pantrySearch.initalSearch = currentIndex.lowercased()
+    }
 }
