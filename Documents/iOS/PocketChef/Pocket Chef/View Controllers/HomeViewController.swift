@@ -86,35 +86,41 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
             return chickenCell
             
-        } else if collectionView == self.beefRecipesCollectionView{
+        }
+        else if collectionView == self.beefRecipesCollectionView{
             let beefCell = collectionView.dequeueReusableCell(withReuseIdentifier: "beefCell", for: indexPath) as! BeefRecipesCollectionViewCell
-            
+
             if let imageUrl = URL(string: beefRecipes?[indexPath.row].media.srcUrlString ?? "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiLypSZ2oLfAhWno4MKHTubAqgQjRx6BAgBEAU&url=https%3A%2F%2Fwww.digitalcitizen.life%2Fset-windows-live-photo-gallery-2011-default-image-viewer&psig=AOvVaw24LBSQ6wWK475KxaeY3eyI&ust=1543893636425251"),
                 let imageData = try? Data(contentsOf: imageUrl){
                 beefCell.recipeImg.image = UIImage(data: imageData)
             }
-            
+
             //        quickBiteCell.mealName.text = quickBitesArray[indexPath.row]
             beefCell.recipeName.text = beefRecipes?[indexPath.row].recipeName as? String
-            
+
             return beefCell
-            
+
         } else if collectionView == self.porkRecipesCollectionView{
             let porkCell = collectionView.dequeueReusableCell(withReuseIdentifier: "porkCell", for: indexPath) as! PorkRecipesCollectionViewCell
-            
+
             if let imageUrl = URL(string: porkRecipes?[indexPath.row].media.srcUrlString ?? "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiLypSZ2oLfAhWno4MKHTubAqgQjRx6BAgBEAU&url=https%3A%2F%2Fwww.digitalcitizen.life%2Fset-windows-live-photo-gallery-2011-default-image-viewer&psig=AOvVaw24LBSQ6wWK475KxaeY3eyI&ust=1543893636425251"),
                 let imageData = try? Data(contentsOf: imageUrl){
                 porkCell.recipeImg.image = UIImage(data: imageData)
             }
-            
+
             //        quickBiteCell.mealName.text = quickBitesArray[indexPath.row]
             porkCell.recipeName.text = porkRecipes?[indexPath.row].recipeName as? String
-            
+
             return porkCell
-            
+
         } else{
             return UICollectionViewCell()
         }
-        //return UICollectionViewCell()
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let indexPath = quickBitesCollectionView.indexPat{
+//            
+//        }
+//    }
 }

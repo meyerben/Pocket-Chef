@@ -18,8 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H3P-Ff-Fuh">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="126.66666666666669" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="559" id="iee-xk-r7k"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pantryItemCell" rowHeight="50" id="AWh-Eb-KVN" customClass="PantryItemTableViewCell" customModule="Pocket_Chef" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
@@ -53,13 +56,34 @@
                                     <outlet property="delegate" destination="xqt-od-feq" id="hy7-0w-aXJ"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert Pantry Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V14-oc-nb6">
+                                <rect key="frame" x="0.0" y="88" width="375" height="30.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="8OL-Vh-QCd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="yes"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maT-yR-2Ld">
+                                <rect key="frame" x="163.66666666666666" y="693.66666666666663" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <segue destination="Qv3-41-BKa" kind="show" id="qTn-WU-kMa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="H3P-Ff-Fuh" firstAttribute="centerX" secondItem="maT-yR-2Ld" secondAttribute="centerX" id="3mG-Fy-P97"/>
                             <constraint firstItem="Zzu-Qh-Ksm" firstAttribute="trailing" secondItem="H3P-Ff-Fuh" secondAttribute="trailing" id="Dwg-ZX-V8A"/>
                             <constraint firstItem="H3P-Ff-Fuh" firstAttribute="leading" secondItem="Zzu-Qh-Ksm" secondAttribute="leading" id="QRL-um-LA8"/>
-                            <constraint firstItem="Zzu-Qh-Ksm" firstAttribute="bottom" secondItem="H3P-Ff-Fuh" secondAttribute="bottom" id="alF-GO-tMx"/>
-                            <constraint firstItem="H3P-Ff-Fuh" firstAttribute="top" secondItem="Zzu-Qh-Ksm" secondAttribute="top" id="yMi-A2-uoe"/>
+                            <constraint firstItem="V14-oc-nb6" firstAttribute="leading" secondItem="Zzu-Qh-Ksm" secondAttribute="leading" id="UHQ-DI-wTo"/>
+                            <constraint firstItem="maT-yR-2Ld" firstAttribute="top" secondItem="H3P-Ff-Fuh" secondAttribute="bottom" constant="8" id="fwN-8d-scd"/>
+                            <constraint firstItem="Zzu-Qh-Ksm" firstAttribute="trailing" secondItem="V14-oc-nb6" secondAttribute="trailing" id="i0t-G2-dhi"/>
+                            <constraint firstItem="V14-oc-nb6" firstAttribute="top" secondItem="Zzu-Qh-Ksm" secondAttribute="top" id="jbU-k0-fFy"/>
+                            <constraint firstItem="H3P-Ff-Fuh" firstAttribute="centerY" secondItem="FGU-hZ-QsY" secondAttribute="centerY" id="jwn-Aq-jLh"/>
+                            <constraint firstItem="H3P-Ff-Fuh" firstAttribute="top" secondItem="V14-oc-nb6" secondAttribute="bottom" constant="8" id="mon-PK-L06"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zzu-Qh-Ksm"/>
                     </view>
@@ -71,6 +95,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ingredientTxt" destination="V14-oc-nb6" id="04K-pk-Rgf"/>
                         <outlet property="pantryTblView" destination="H3P-Ff-Fuh" id="p1M-JR-IlF"/>
                     </connections>
                 </viewController>
@@ -78,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="-423.19999999999999" y="208.37438423645321"/>
         </scene>
-        <!--Saved-->
+        <!--Favorites-->
         <scene sceneID="GEd-KY-EHn">
             <objects>
                 <viewController id="fLr-6J-7dH" sceneMemberID="viewController">
@@ -97,7 +122,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Uag-UQ-dUk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Saved" id="pMx-2u-GFh"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="Star" id="pMx-2u-GFh">
+                        <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7R-On-DLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -315,9 +342,11 @@
                                 <rect key="frame" x="16" y="658" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search By Ingredient"/>
-                                <connections>
-                                    <segue destination="Qv3-41-BKa" kind="show" id="CTz-2W-H77"/>
-                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd2-vf-VH0">
+                                <rect key="frame" x="128" y="699" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search By Pantry"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -708,7 +737,9 @@
         <scene sceneID="tof-qM-ptd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nO0-Th-ugu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pantry" image="Pantry Icon" id="eGs-Vu-Lvd"/>
+                    <tabBarItem key="tabBarItem" title="Pantry" image="Pantry Icon" id="eGs-Vu-Lvd">
+                        <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xa1-iv-ZlC">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -727,7 +758,9 @@
         <scene sceneID="qHe-Nm-LMa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XSG-xl-Imj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Recipes Icon" id="QK2-kF-ckD"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Recipes Icon" id="QK2-kF-ckD">
+                        <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nXf-Az-RZx">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -746,5 +779,6 @@
     <resources>
         <image name="Pantry Icon" width="26" height="28"/>
         <image name="Recipes Icon" width="25" height="30"/>
+        <image name="Star" width="30" height="31"/>
     </resources>
 </document>

@@ -16,7 +16,7 @@ class SearchByIngredientViewController: UIViewController, UITableViewDelegate, U
     
     var ingredientRecipes: [Recipe]?
     
-    var initalSearch = "garlic"
+    var initalSearch = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,27 +26,32 @@ class SearchByIngredientViewController: UIViewController, UITableViewDelegate, U
         
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.sizeToFit()
+        //searchController.dimsBackgroundDuringPresentation = false
+        //searchController.searchBar.sizeToFit()
         searchController.searchBar.text = initalSearch
-        ingredientRecipeTblView.tableHeaderView = searchController.searchBar
+        //ingredientRecipeTblView.tableHeaderView = searchController.searchBar
         
         self.ingredientRecipeTblView.reloadData()
         
         searchController.isActive = true
+        
+        print(initalSearch)
+        
+        if ingredientRecipes == nil{
+            print("Error")
+        }
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text{
-            YummlySearchByIngredient.search(searchText: searchText, userInfo: nil, dispatchQueueForHandler: DispatchQueue.main) { (userInfo, recipes, errorString) in
+            YummlySearchByIngredient.search(searchText: initalSearch, userInfo: nil, dispatchQueueForHandler: DispatchQueue.main) { (userInfo, recipes, errorString) in
                 if errorString != nil{
                     self.ingredientRecipes = nil
+                    //print("Error")
                 } else {
                     self.ingredientRecipes = recipes
                 }
                 self.ingredientRecipeTblView.reloadData()
             }
-        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
