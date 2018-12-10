@@ -16,6 +16,8 @@ class SearchByIngredientViewController: UIViewController, UITableViewDelegate, U
     
     var ingredientRecipes: [Recipe]?
     
+    var favorites: Favorites?
+    
     var initalSearch = ""
 
     override func viewDidLoad() {
@@ -36,10 +38,6 @@ class SearchByIngredientViewController: UIViewController, UITableViewDelegate, U
         searchController.isActive = true
         
         print(initalSearch)
-        
-        if ingredientRecipes == nil{
-            print("Error")
-        }
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -80,6 +78,33 @@ class SearchByIngredientViewController: UIViewController, UITableViewDelegate, U
         return ingredientCell
     }
 
-    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, indexPath) in
+            // share item at indexPath
 
+            self.favorites = Favorites(favRecipeName: self.ingredientRecipes?[indexPath.row].recipeName as! String, favRecipeURL: self.ingredientRecipes?[indexPath.row].recipeURL ?? "www.yummly.com")
+
+            self.isEditing = false
+
+            do{
+                try self.favorites?.managedObjectContext?.save()
+            } catch {
+                print("Failed to save")
+            }
+            //print(self.favorites?.favRecipeName!)
+        }
+
+        favorite.backgroundColor = UIColor.green
+
+        return [favorite]
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = ingredientRecipeTblView.indexPathForSelectedRow{
+            let selectedRow = indexPath.row
+            let recipeWebView = segue.destination as! WebKitViewController
+            recipeWebView.recipeURL = self.ingredientRecipes?[selectedRow].recipeURL ?? "www.yummly.com"
+        }
+        //searchController.dismiss(animated: true, completion: {})
+    }
 }

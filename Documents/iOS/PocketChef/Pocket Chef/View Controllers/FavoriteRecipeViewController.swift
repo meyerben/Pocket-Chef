@@ -20,6 +20,7 @@ class FavoriteRecipeViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        favRecipeTblView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
         //print(favRecipeName)
         //print(favRecipeUrl)

@@ -138,9 +138,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let seeAll = segue.destination as! QuickBitesSeeAllViewController
-        seeAll.initialSearchText = self.initalSearchText
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let seeAll = segue.destination as! QuickBitesSeeAllViewController
+//        seeAll.initialSearchText = self.initalSearchText
+//    }
     
 }
