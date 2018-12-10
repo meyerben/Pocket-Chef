@@ -30,6 +30,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let pocketChefLogo = UIImage(named: "PocketChef.png")
+        let imageView = UIImageView(image: pocketChefLogo)
+        self.navigationItem.titleView = imageView
+        
         
         //quickBitesCollectionView.
         // Do any additional setup after loading the view.

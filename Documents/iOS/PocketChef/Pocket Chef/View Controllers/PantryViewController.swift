@@ -22,7 +22,9 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let pantryLogo = UIImage(named: "Pantry.png")
+        let imageView = UIImageView(image: pantryLogo)
+        self.navigationItem.titleView = imageView
     }
     
     override func viewWillAppear(_ animated: Bool) {

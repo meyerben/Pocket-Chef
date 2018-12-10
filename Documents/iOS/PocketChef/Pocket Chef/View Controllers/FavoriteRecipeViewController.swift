@@ -23,7 +23,9 @@ class FavoriteRecipeViewController: UIViewController, UITableViewDelegate, UITab
         // Do any additional setup after loading the view.
         //print(favRecipeName)
         //print(favRecipeUrl)
-    
+        let savedForLaterLogo = UIImage(named: "SavedforLater.png")
+        let imageView = UIImageView(image: savedForLaterLogo)
+        self.navigationItem.titleView = imageView
         
     }
     
