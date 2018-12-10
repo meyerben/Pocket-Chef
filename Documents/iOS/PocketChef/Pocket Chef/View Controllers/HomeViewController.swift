@@ -17,6 +17,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var porkRecipesCollectionView: UICollectionView!
     
     
+    @IBOutlet weak var seeAllChickenBtn: UIButton!
+    @IBOutlet weak var seeAllVegieBtn: UIButton!
+    @IBOutlet weak var seeAllQuickBtn: UIButton!
     
     var initalSearchText = ""
     
@@ -30,6 +33,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let pocketChefLogo = UIImage(named: "PocketChef.png")
+        let imageView = UIImageView(image: pocketChefLogo)
+        self.navigationItem.titleView = imageView
+        
         
         //quickBitesCollectionView.
         // Do any additional setup after loading the view.
@@ -49,7 +56,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.quickBitesCollectionView.reloadData()
             }
         
-        YummlyAPI.search(searchText: "Beef", userInfo: nil, dispatchQueueForHandler: DispatchQueue.main) { (userInfo, recipes, errorString) in
+        YummlyAPI.search(searchText: "Vegetarian", userInfo: nil, dispatchQueueForHandler: DispatchQueue.main) { (userInfo, recipes, errorString) in
             if errorString != nil{
                 self.beefRecipes = nil
             } else {
@@ -58,7 +65,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.beefRecipesCollectionView.reloadData()
         }
         
-        YummlyAPI.search(searchText: "Pork", userInfo: nil, dispatchQueueForHandler: DispatchQueue.main) { (userInfo, recipes, errorString) in
+        YummlyAPI.search(searchText: "Breakfast", userInfo: nil, dispatchQueueForHandler: DispatchQueue.main) { (userInfo, recipes, errorString) in
             if errorString != nil{
                 self.porkRecipes = nil
             } else {
@@ -123,20 +130,25 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     //Figure out how to show all based on button click so weather its chicken or beef they want to search for
     
     @IBAction func seeAllChicken(_ sender: Any) {
-        if initalSearchText == ""{
-            initalSearchText = "Chicken"
-        }
+        
     }
     
     @IBAction func seeAllBeef(_ sender: Any) {
-        if initalSearchText == ""{
-            initalSearchText = "Beef"
-        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let seeAll = segue.destination as! QuickBitesSeeAllViewController
-        seeAll.initialSearchText = self.initalSearchText
+        
+        if seeAllChickenBtn.isTouchInside == true{
+            let seeAllChicken = segue.destination as! QuickBitesSeeAllViewController
+            seeAllChicken.initialSearchText = "Chicken"
+        } else if seeAllVegieBtn.isTouchInside == true{
+            let seeAllVegie = segue.destination as! QuickBitesSeeAllViewController
+            seeAllVegie.initialSearchText = "Vegetarian"
+        } else if seeAllQuickBtn.isTouchInside == true{
+            let seeAllQuick = segue.destination as! QuickBitesSeeAllViewController
+            seeAllQuick.initialSearchText = "Breakfast"
+        }
     }
     
 }

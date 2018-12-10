@@ -15,6 +15,8 @@
 		76491BD321BD968900A45BFC /* Favorites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76491BD121BD968900A45BFC /* Favorites+CoreDataProperties.swift */; };
 		76491BD521BD9C7800A45BFC /* FavoriteRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76491BD421BD9C7800A45BFC /* FavoriteRecipeViewController.swift */; };
 		76491BD721BD9CB900A45BFC /* FavoriteRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76491BD621BD9CB900A45BFC /* FavoriteRecipeTableViewCell.swift */; };
+		76491BD921BE2D2600A45BFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76491BD821BE2D2600A45BFC /* SearchViewController.swift */; };
+		76491BDB21BE2E7E00A45BFC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76491BDA21BE2E7E00A45BFC /* SearchTableViewCell.swift */; };
 		767E8097219E13D000526B1D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E8096219E13D000526B1D /* Recipe.swift */; };
 		76948B9C21B05322005BD497 /* RecipeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76948B9A21B05322005BD497 /* RecipeModel.xcdatamodeld */; };
 		76A1D04121B700D200DFF588 /* DetailedRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1D04021B700D200DFF588 /* DetailedRecipeViewController.swift */; };
@@ -44,6 +46,8 @@
 		76491BD121BD968900A45BFC /* Favorites+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		76491BD421BD9C7800A45BFC /* FavoriteRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeViewController.swift; sourceTree = "<group>"; };
 		76491BD621BD9CB900A45BFC /* FavoriteRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeTableViewCell.swift; sourceTree = "<group>"; };
+		76491BD821BE2D2600A45BFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		76491BDA21BE2E7E00A45BFC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		767E8096219E13D000526B1D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		76948B9B21B05322005BD497 /* RecipeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeModel.xcdatamodel; sourceTree = "<group>"; };
 		76A1D04021B700D200DFF588 /* DetailedRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRecipeViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				76F29FE321B7630A00F8BAB7 /* PorkRecipesCollectionViewCell.swift */,
 				76AC06FB21B789C3007B846F /* SearchByIngredientsTableViewCell.swift */,
 				76491BD621BD9CB900A45BFC /* FavoriteRecipeTableViewCell.swift */,
+				76491BDA21BE2E7E00A45BFC /* SearchTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 				76F29FDF21B7460100F8BAB7 /* WebKitViewController.swift */,
 				76AC06F921B78805007B846F /* SearchByIngredientViewController.swift */,
 				76491BD421BD9C7800A45BFC /* FavoriteRecipeViewController.swift */,
+				76491BD821BE2D2600A45BFC /* SearchViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -248,6 +254,8 @@
 				763D177D219B6E1000B51D3C /* HomeViewController.swift in Sources */,
 				767E8097219E13D000526B1D /* Recipe.swift in Sources */,
 				76AC06FA21B78805007B846F /* SearchByIngredientViewController.swift in Sources */,
+				76491BD921BE2D2600A45BFC /* SearchViewController.swift in Sources */,
+				76491BDB21BE2E7E00A45BFC /* SearchTableViewCell.swift in Sources */,
 				76AC06F821B786EB007B846F /* YummlySearchByIngredient.swift in Sources */,
 				76A1D04121B700D200DFF588 /* DetailedRecipeViewController.swift in Sources */,
 				763D1782219B729800B51D3C /* QuickBitesSeeAllTableViewCell.swift in Sources */,

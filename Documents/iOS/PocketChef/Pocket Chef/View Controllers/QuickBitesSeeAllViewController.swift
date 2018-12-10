@@ -104,15 +104,8 @@ class QuickBitesSeeAllViewController: UIViewController, UITableViewDelegate, UIT
         
         if let indexPath = quickBitesSeeAllTblView.indexPathForSelectedRow{
             let selectedRow = indexPath.row
-            let detailedRecipe = segue.destination as! DetailedRecipeViewController
-            //detailVC.park = self.parksArray[selectedRow]
-            detailedRecipe.recipeN = self.recipes?[selectedRow].recipeName as! String
-            detailedRecipe.recipeTime = self.recipes?[selectedRow].cookTime ?? "No Cook Time Found"
-            detailedRecipe.recipeRate = self.recipes?[selectedRow].recipeRating ?? "No Rating Found"
-//            detailedRecipe.recipeCategory = self.recipes?[selectedRow].category ?? "No Category Found"
-//            detailedRecipe.recipeName.text = self.recipes?[selectedRow].recipeName as? String
-            detailedRecipe.recipeLink = self.recipes?[selectedRow].recipeURL ?? "No URL Found"
-            detailedRecipe.recipeImgUrl = self.recipes?[indexPath.row].media.srcUrlString ?? "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiLypSZ2oLfAhWno4MKHTubAqgQjRx6BAgBEAU&url=https%3A%2F%2Fwww.digitalcitizen.life%2Fset-windows-live-photo-gallery-2011-default-image-viewer&psig=AOvVaw24LBSQ6wWK475KxaeY3eyI&ust=1543893636425251"
+            let recipeWebView = segue.destination as! WebKitViewController
+            recipeWebView.recipeURL = self.recipes?[selectedRow].recipeURL ?? "www.yummly.com"
         }
         searchController.dismiss(animated: true, completion: {})
     }

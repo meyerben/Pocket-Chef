@@ -80,7 +80,7 @@ class YummlySearchByIngredient{
         
         //print("\(rootNode)")
         var recipes = [Recipe]()
-        print("RESULTS PRINTED HERE")
+        //print("RESULTS PRINTED HERE")
         
         if let results = rootNode["matches"] as? [[String: Any]]{
             //print(results)
