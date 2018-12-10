@@ -14,6 +14,7 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var ingredientTxt: UITextField!
     @IBOutlet weak var pantryTblView: UITableView!
     
+    @IBOutlet weak var pantrySearchBtn: UIButton!
     
     var foodPantry: Pantry?
     var pantryArray = [Pantry]()
@@ -27,6 +28,7 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let pantryLogo = UIImage(named: "Pantry.png")
         let imageView = UIImageView(image: pantryLogo)
         self.navigationItem.titleView = imageView
+        
         
     }
     

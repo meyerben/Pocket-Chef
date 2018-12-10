@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var singleIngredientTblView: UITableView!
@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var favorites: Favorites?
     
-    var initalSearch = "Garlic"
+    var initalSearch = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         singleIngredientTblView.tableFooterView = UIView()
         
         searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
+        //searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()
         searchController.searchBar.text = initalSearch
@@ -39,17 +39,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         searchController.isActive = true
         
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        YummlySearchByIngredient.search(searchText: initalSearch.lowercased(), userInfo: nil, dispatchQueueForHandler: DispatchQueue.main) { (userInfo, recipes, errorString) in
-            if errorString != nil{
-                self.ingredientRecipes = nil
-            } else {
-                self.ingredientRecipes = recipes
-            }
-            self.singleIngredientTblView.reloadData()
-        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,15 +64,52 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         return ingredientCell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, indexPath) in
+            // share item at indexPath
+            print("Working")
+            self.favorites = Favorites(favRecipeName: self.ingredientRecipes?[indexPath.row].recipeName as! String, favRecipeURL: self.ingredientRecipes?[indexPath.row].recipeURL ?? "www.yummly.com")
+            
+            do{
+                try self.favorites?.managedObjectContext?.save()
+            } catch {
+                print("Failed to save")
+            }
+            //print(self.favorites?.favRecipeName!)
+        }
+        
+        favorite.backgroundColor = UIColor.green
+        
+        return [favorite]
     }
-    */
-
+    
+    
+    @IBAction func searchSubmit(_ sender: Any) {
+        
+        initalSearch = searchController.searchBar.text!.lowercased()
+        if initalSearch == nil{
+            print("Error")
+        }
+        
+        YummlySearchByIngredient.search(searchText: initalSearch, userInfo: nil, dispatchQueueForHandler: DispatchQueue.main) { (userInfo, recipes, errorString) in
+            if errorString != nil{
+                self.ingredientRecipes = nil
+            } else {
+                self.ingredientRecipes = recipes
+            }
+            self.singleIngredientTblView.reloadData()
+        }
+        searchController.dismiss(animated: true, completion: {})
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = singleIngredientTblView.indexPathForSelectedRow{
+            let selectedRow = indexPath.row
+            let recipeWebView = segue.destination as! WebKitViewController
+            recipeWebView.recipeURL = self.ingredientRecipes?[selectedRow].recipeURL ?? "www.yummly.com"
+        }
+        searchController.dismiss(animated: true, completion: {})
+    }
+    
 }

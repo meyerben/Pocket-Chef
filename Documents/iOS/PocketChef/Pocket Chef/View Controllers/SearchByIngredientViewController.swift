@@ -81,11 +81,9 @@ class SearchByIngredientViewController: UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { (action, indexPath) in
             // share item at indexPath
-
+            
             self.favorites = Favorites(favRecipeName: self.ingredientRecipes?[indexPath.row].recipeName as! String, favRecipeURL: self.ingredientRecipes?[indexPath.row].recipeURL ?? "www.yummly.com")
-
-            self.isEditing = false
-
+            
             do{
                 try self.favorites?.managedObjectContext?.save()
             } catch {
@@ -93,9 +91,9 @@ class SearchByIngredientViewController: UIViewController, UITableViewDelegate, U
             }
             //print(self.favorites?.favRecipeName!)
         }
-
+        
         favorite.backgroundColor = UIColor.green
-
+        
         return [favorite]
     }
 
